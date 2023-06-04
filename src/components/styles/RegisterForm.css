@@ -1,0 +1,29 @@
+.formContainer {
+  background-image: url("../../util/images/background.jpg");
+  background-position: center;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  height: 100vh;
+  color: white;
+}
+.formCard {
+  width: 60%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 35px;
+}
+.formCard Form {
+  padding-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-bottom: 30px;
+}
+.whiteText {
+  color: white;
+}

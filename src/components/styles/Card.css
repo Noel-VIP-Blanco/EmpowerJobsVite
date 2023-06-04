@@ -1,0 +1,28 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; /* Adjust padding for inner content */
+}
+
+.left-content {
+  flex-grow: 1;
+}
+
+.right-content {
+  display: flex;
+  align-items: center; /* Center align the buttons vertically */
+  margin-left: 10px; /* Adjust margin for spacing */
+}
+
+.right-content button {
+  margin-right: 8px; /* Add margin to the buttons */
+  height: 40px;
+  width: 100px;
+}
