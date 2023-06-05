@@ -31,11 +31,13 @@ const NavBar = () => {
         className="navbar"
       >
         <Container>
-          <Navbar.Brand href="#">
-            {!user || user.userName !== "admin" ? "Applicant" : "Administrator"}
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Brand href="#">
+              {!user || user.userName !== "admin"
+                ? "Applicant"
+                : "Administrator"}
+            </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">
                 {!user || user.userName !== "admin"
@@ -43,6 +45,14 @@ const NavBar = () => {
                   : "List of Applicants"}
               </Nav.Link>
             </Nav>
+            <Navbar.Brand
+              href="#"
+              style={{
+                marginRight: "40%",
+              }}
+            >
+              <span className="admin-text">Empower Jobs</span>
+            </Navbar.Brand>
             <Nav>
               <Nav.Link href="/register">Register</Nav.Link>
 
