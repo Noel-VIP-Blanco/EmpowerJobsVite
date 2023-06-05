@@ -19,7 +19,7 @@ export const ApplicantCard: React.FC<IApplicantCard> = ({ applicant }) => {
             <Card.Title style={{ textAlign: "center" }}>
               {applicant.jobName}
             </Card.Title>
-            <Card.Text>{applicant.userName}</Card.Text>
+            <Card.Text>Applicant: {applicant.userName}</Card.Text>
             <hr />
             <div className="row">
               <div className="col-md-6">
@@ -40,7 +40,7 @@ export const ApplicantCard: React.FC<IApplicantCard> = ({ applicant }) => {
           </div>
           <div className="right-content">
             <Button
-              variant="secondary"
+              variant="success"
               onClick={() => {
                 AcceptHandler(applicant.userName);
               }}
@@ -48,7 +48,7 @@ export const ApplicantCard: React.FC<IApplicantCard> = ({ applicant }) => {
               Accept
             </Button>
             <Button
-              variant="secondary"
+              variant="danger"
               onClick={() => {
                 DeclineHandler(applicant.userName, applicant.jobName);
               }}
