@@ -72,6 +72,7 @@ export const LoginForm = () => {
                     onChange={(e) => {
                       setUsername(e.target.value);
                     }}
+                    style={{ color: "white" }}
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
                     label="Username"
@@ -83,12 +84,18 @@ export const LoginForm = () => {
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
+                    style={{ color: "white" }}
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
                     label="Password"
                     id="formControlPassword"
                     type="password"
                     size="lg"
+                    onKeyUp={(e) => {
+                      if (e.key === "Enter") {
+                        handleLogin();
+                      }
+                    }}
                   />
 
                   <p className="small mb-3 pb-lg-2">

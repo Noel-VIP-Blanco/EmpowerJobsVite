@@ -1,0 +1,28 @@
+[
+  {
+    "_id": { "$oid": "64775be614eed34de855fd4f" },
+    "jobName": "Front-end Developer",
+    "prefferedSkills": ["JavaScript", "React", "HTML", "CSS", "Angular"],
+    "suitableDisabilities": ["Deaf", "Mute", "Leg Amputation"],
+    "salaryPerYear": { "$numberInt": "50000" },
+    "__v": { "$numberInt": "0" },
+    "description": "A Front-End Developer is responsible for developing new user-facing features, determining the structure and design of web pages, building reusable codes, optimizing page loading times, and using a variety of markup languages to create the web pages."
+  },
+  {
+    "_id": { "$oid": "64775c9a14eed34de855fd51" },
+    "jobName": "Back-end Developer",
+    "prefferedSkills": ["JavaScript", "Express", "Node", "Database"],
+    "suitableDisabilities": ["Deaf", "Mute", "Leg Amputation"],
+    "salaryPerYear": { "$numberInt": "55000" },
+    "__v": { "$numberInt": "0" },
+    "description": "Backend developer responsibilities include creating, maintaining, testing, and debugging the entire back end of an application or system. This includes the core application logic, databases, data and application integration, API, and other processes taking place behind the scenes."
+  },
+  {
+    "_id": { "$oid": "647d7ca40da6cc78499b94fe" },
+    "jobName": "Database Administrator",
+    "prefferedSkills": ["Database", "SQL", "MySQL", "MsSql"],
+    "suitableDisabilities": ["Leg Amputation", "Mute"],
+    "salaryPerYear": "70000",
+    "description": "A database administrator, or DBA, is responsible for maintaining, securing, and operating databases and also ensures that data is correctly stored and retrieved. In addition, DBAs often work with developers to design and implement new features and troubleshoot any issues.\n"
+  }
+]

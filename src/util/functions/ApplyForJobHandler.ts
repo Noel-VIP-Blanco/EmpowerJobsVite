@@ -41,15 +41,12 @@ export const ApplyForJobHandler = async ({
     });
   } else {
     try {
-      const response = await axios.post(
-        "http://localhost:4000/list-of-applicants/",
-        {
-          jobName: job.jobName,
-          userName: loginUser?.userName,
-          skills: loginUser?.skills,
-          disability: loginUser?.disability,
-        }
-      );
+      await axios.post("http://localhost:4000/list-of-applicants/", {
+        jobName: job.jobName,
+        userName: loginUser?.userName,
+        skills: loginUser?.skills,
+        disability: loginUser?.disability,
+      });
       Swal.fire("You are all done!", "Job applied!", "success");
     } catch (error) {
       // Handle error here

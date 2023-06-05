@@ -18,6 +18,9 @@ const NavBar = () => {
   }, [setUser]);
   setUser(loginUser);
 
+  const Logout = () => {
+    localStorage.removeItem("loginUser");
+  };
   return (
     <div>
       <Navbar
@@ -42,7 +45,14 @@ const NavBar = () => {
             </Nav>
             <Nav>
               <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+
+              {!loginUser ? (
+                <Nav.Link href="/login">Login</Nav.Link>
+              ) : (
+                <Nav.Link href="/login" onClick={Logout}>
+                  Logout
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

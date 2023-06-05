@@ -4,8 +4,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 
+//interface
+interface Job {
+  jobName: string;
+  prefferedSkills: string[];
+  suitableDisabilities: string[];
+  salaryPerYear: number;
+  description: string;
+}
+
 const ListOfJobs = () => {
-  const [listOfJobs, setListOfJobs] = useState([]);
+  const [listOfJobs, setListOfJobs] = useState<Job[]>([]);
   const [listOfApplicants, setListOfApplicants] = useState([]);
   const [loginUser, setLoginUser] = useState<{
     userName: string;
@@ -54,14 +63,30 @@ const ListOfJobs = () => {
     }
   }, [loginUser]);
 
+  //filtered jobs only appear based on disability of the user
+  const filteredJobs = listOfJobs.filter((job) => {
+    return (
+      loginUser &&
+      loginUser.disability &&
+      job.suitableDisabilities.includes(loginUser.disability)
+    );
+  });
+  console.log(filteredJobs);
   return (
-    <div className="pageContainer">
+    <>
       {!loginUser || loginUser.userName !== "admin" ? (
-        <MyCard listOfJobs={listOfJobs} loginUser={loginUser} />
+        <div className="pageContainer">
+          <MyCard
+            listOfJobs={filteredJobs.length > 0 ? filteredJobs : listOfJobs}
+            loginUser={loginUser}
+          />
+        </div>
       ) : (
-        <ListOfApplicants listOfApplicants={listOfApplicants} />
+        <div className="pageContainer">
+          <ListOfApplicants listOfApplicants={listOfApplicants} />
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -31,3 +31,27 @@ export const AcceptHandler = async (username: string) => {
     });
   }
 };
+
+export const DeclineHandler = async (username: string, jobName: string) => {
+  try {
+    axios.delete(
+      `http://localhost:4000/list-of-applicants/${username}/${jobName}`
+    );
+    // Handle success
+    Swal.fire({
+      title: "Successful",
+      text: "User Declined to the job",
+      icon: "success",
+      confirmButtonColor: "#3085d6",
+    }).then(() => {
+      window.location.reload();
+    });
+  } catch (error) {
+    // Handle error
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `Invalid action`,
+    });
+  }
+};

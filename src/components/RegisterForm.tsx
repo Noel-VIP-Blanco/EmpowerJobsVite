@@ -361,11 +361,11 @@ export const RegisterForm = () => {
                   <Col sm={{ span: 4 }}>
                     <Form.Check
                       type="radio"
-                      label="Blind"
+                      label="Visually Empaired"
                       name="formHorizontalRadios"
-                      id="blindRadio"
-                      value="Blind"
-                      checked={disability === "Blind"}
+                      id="visuallyEmpairedRadio"
+                      value="Visually Empaired"
+                      checked={disability === "Visually Empaired"}
                       onChange={(event) => {
                         handleRadioChange({ event, setDisability });
                       }}

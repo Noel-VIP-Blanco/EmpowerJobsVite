@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ModalForDetails from "./ModalForDetails";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
 //import functions
 
 type IJobCard = {
@@ -13,23 +12,23 @@ const JobCard: React.FC<IJobCard> = ({ job, applyForJobHandler }) => {
   const [centredModal, setCentredModal] = useState(false);
   const toggleShow = () => setCentredModal(!centredModal);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  //try get data of the user from localstorage
-  const [loginUser, setLoginUser] = useState<{
-    userName: string;
-    skills: string[];
-    disability: string;
-    hasJob: boolean;
-  } | null>(null);
-  useEffect(() => {
-    const storedUser = localStorage.getItem("loginUser");
-    if (storedUser !== null) {
-      const parsedUser = JSON.parse(storedUser);
-      setLoginUser(parsedUser);
-      setIsLoggedIn(true);
-    }
-  }, []);
+  // //try get data of the user from localstorage
+  // const [loginUser, setLoginUser] = useState<{
+  //   userName: string;
+  //   skills: string[];
+  //   disability: string;
+  //   hasJob: boolean;
+  // } | null>(null);
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem("loginUser");
+  //   if (storedUser !== null) {
+  //     const parsedUser = JSON.parse(storedUser);
+  //     setLoginUser(parsedUser);
+  //     setIsLoggedIn(true);
+  //   }
+  // }, []);
 
   return (
     <div className="card-container">

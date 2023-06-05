@@ -44,8 +44,19 @@ const deleteApplicantsAfterAccepted = async (req, res) => {
   }
 };
 
+const deleteApplicantsAfterDeclined = async (req, res) => {
+  const { userName, jobName } = req.params;
+  try {
+    await ListOfApplicants.deleteMany({ userName: userName, jobName: jobName });
+    res.json({ message: `Applicant deleted successfully` });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   createApplicants,
   getAllApplicants,
   deleteApplicantsAfterAccepted,
+  deleteApplicantsAfterDeclined,
 };

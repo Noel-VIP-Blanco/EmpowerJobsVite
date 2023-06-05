@@ -1,7 +1,7 @@
 .formContainer {
   background-image: url("../../util/images/background.jpg");
   background-position: center;
-  background-origin: content-box;
+  background-origin: border-box;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
